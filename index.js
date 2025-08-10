@@ -20,9 +20,7 @@ document.addEventListener("click",function(e){
 
 })
 
-function display2(){
-  
-}
+
 
 async function display(searchinput){
   try{
@@ -68,18 +66,24 @@ async function display2(id){
     
       place+=`<div class="movieDisplay" id="movieDisplay">
       <img src="${Poster}" alt="poster of${Title}"id="poster"class="poster">
-      <button id="watchlist-btn" class="watchlist-btn">+</button>
-      <p id="watchlist-text"class="watchlist-text">Watchlist</p>
-      
+      <div class="movieDisplay1" id="movieDisplay1">
+      <div class="movieDisplay2" id="movieDisplay2">
       <h2 id="bigtitle-data"class="bigtitle-data">${Title}</h2>
+      <p id="p-rating"class="p-rating">${imdbRating}</p>
+      <img src="icon.png" alt="star" id="star" class="star">
+      </div>
+      <div class="movieDisplay3" id="movieDisplay3">
       <p id="p-runtime" class="p-runtime">${Runtime}</p>
       <p id="p-genre"class="p-genre">${Genre}</p>
+      <p id="watchlist-text"class="watchlist-text">Watchlist</p>
+      <button id="watchlist-btn" class="watchlist-btn">+</button>
+      </div>
       <p id="p-plot"class="p-plot">${Plot}</p>
-      <img src="icon.png" alt="star" id="star" class="star">
-      <p id="p-rating"class="p-rating">${imdbRating}</p>
+      </div>
+      
       </div>`
       
-      mainSpace.innerHTML+= place
+      mainSpace.innerHTML= place
     })
 
  }   
