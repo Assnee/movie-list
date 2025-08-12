@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <link rel="stylesheet" href="index2.css">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,28 +12,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
-    <div class="container-relative">
-        <div class="titleplace" id="titleplace">
-            <h1 class="bigtitle" id="bigtitle">Find your film</h1>
-            <a href="./watch.html" id="moviesearch" class="moviesearch">My Watchlist</a>
-        </div>
-        <form>
-            <input type=" search" placeholder="         Search for a movie" id="searchbody" class="searchbody">
-            <input type="submit" value="Search" id="search-btn" class="search-btn">
-        </form>
+    <div class="titleplace" id="titleplace">
+        <h2 class="bigtitle" id="bigtitle">My Watchlist</h2>
+        <a href="./index.html" id="moviesearch" class="title-button"> Search for movies
+        </a>
     </div>
-    <main id="main" class="main">
+    <main>
 
-        <div class="container" id="container">
+        <div class="container2" id="container2">
+            <P id="containerparaempty">Your watchlist is looking a little empty...</P>
+            <div id="add" class="add">
+                <button id="buttonadd" class="buttonadd">+</button>
 
-            <img src="Icon.png" alt="ticket icon">
-            <h2>Start exploring</h2>
+                <h2 id="emptymovie" class="emptymovie">let's add some movies!</h2>
+            </div>
         </div>
+
     </main>
 </body>
-<script src="index.js" type="module"></script>
+<script src="index2.js" type="module"></script>
 
 </html>

@@ -2,14 +2,18 @@
   let inputPlace =document.getElementById("searchbody")
 let mainSpace = document.getElementById("main")
   let search =document.getElementById("search-btn") 
+  let arrayWatchlist =[]
 document.addEventListener("click",function(e){
   e.preventDefault()
   if(e.target.classList.contains('search-btn')){
      render()
      
   }
-  if(e.target.classList.contains('watchlist-btn')){
-
+  if(e.target.dataset.id){
+ 
+   const id = e.target.dataset.id
+  localStorage.setItem('id',id)
+  console.log(localStorage.getItem('id'))
   }
   if(e.target.classList.contains('remove-btn')){
 
@@ -51,13 +55,14 @@ async function display2(id){
         console.log(err)
       }
     }
-  
+    
+    let paragraph=''
       
     // implement reponse if or elese statement in the destructuring of the object searched
     async function render(){
    let place=""
       const data = await display(inputPlace.value)
-      console.log(data)
+      
       const searching = data.Search
       searching.forEach(async(searched)=>{
         const {Title ,imdbID}= searched
@@ -70,19 +75,18 @@ async function display2(id){
       <div class="movieDisplay2" id="movieDisplay2">
       <h2 id="bigtitle-data"class="bigtitle-data">${Title}</h2>
       <p id="p-rating"class="p-rating">${imdbRating}</p>
-      <img src="icon.png" alt="star" id="star" class="star">
+      <img src="star.png" alt="star" id="star" class="star">
       </div>
       <div class="movieDisplay3" id="movieDisplay3">
       <p id="p-runtime" class="p-runtime">${Runtime}</p>
       <p id="p-genre"class="p-genre">${Genre}</p>
-      <p id="watchlist-text"class="watchlist-text">Watchlist</p>
-      <button id="watchlist-btn" class="watchlist-btn">+</button>
+      <label   id="watchlist-text"class="watchlist-text">add to Watchlist</label>
+      <input type="button" id="watchlist-btn" class="watchlist-btn" value='+'data-id='${imdbID}'>
       </div>
       <p id="p-plot"class="p-plot">${Plot}</p>
       </div>
       
       </div>`
-      
       mainSpace.innerHTML= place
     })
 
