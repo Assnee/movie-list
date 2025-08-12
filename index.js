@@ -10,12 +10,17 @@ document.addEventListener("click",function(e){
      
   }
   if(e.target.dataset.id){
- 
-   const id = e.target.dataset.id
-  localStorage.setItem('id',id)
+ arrayWatchlist.push(e.target.dataset.id)
+  console.log(arrayWatchlist)
+  localStorage.setItem('id',arrayWatchlist)
   console.log(localStorage.getItem('id'))
   }
   if(e.target.classList.contains('remove-btn')){
+
+  }
+  if(e.target.classList.contains('moviesearch')){
+    console.log(`yes`)
+    window.location.replace("http://127.0.0.1:5500/watch.html")
 
   }
   
