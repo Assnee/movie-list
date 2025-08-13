@@ -12,7 +12,7 @@ document.addEventListener("click",function(e){
   if(e.target.dataset.id){
  arrayWatchlist.push(e.target.dataset.id)
   console.log(arrayWatchlist)
-  localStorage.setItem('id',arrayWatchlist)
+  localStorage.setItem('id',JSON.stringify(arrayWatchlist))
   console.log(localStorage.getItem('id'))
   }
   if(e.target.classList.contains('remove-btn')){

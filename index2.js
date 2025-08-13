@@ -1,10 +1,11 @@
 
 let mainSpace = document.getElementById("main")
+let place =''
 console.log(localStorage.getItem('id'))
-const localStorageContent=localStorage.getItem('id')
+const localStorageContent = JSON.parse(localStorage.getItem('id'))
 localStorageContent.forEach(async function(suit){
     const response3 = await fetch(`http://www.omdbapi.com/?apikey=2f0fb166&i=${suit}`)
-    const{imdbRating,Poster,Genre,Plot,Runtime} = response3
+    const{imdbRating,Poster,Genre,Plot,Runtime,Title} = response3
     place+=`<div class="movieDisplay" id="movieDisplay">
       <img src="${Poster}" alt="poster of${Title}"id="poster"class="poster">
       <div class="movieDisplay1" id="movieDisplay1">
@@ -17,7 +18,7 @@ localStorageContent.forEach(async function(suit){
       <p id="p-runtime" class="p-runtime">${Runtime}</p>
       <p id="p-genre"class="p-genre">${Genre}</p>
       <label   id="watchlist-text"class="watchlist-text">add to Watchlist</label>
-      <input type="button" id="watchlist-btn" class="watchlist-btn" value='+'data-id='${imdbID}'>
+      <input type="button" id="watchlist-btn" class="watchlist-btn" value='+'>
       </div>
       <p id="p-plot"class="p-plot">${Plot}</p>
       </div>
