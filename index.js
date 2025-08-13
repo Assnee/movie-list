@@ -2,15 +2,15 @@
   let inputPlace =document.getElementById("searchbody")
 let mainSpace = document.getElementById("main")
   let search =document.getElementById("search-btn") 
-  let arrayWatchlist =[]
-document.addEventListener("click",function(e){
-  e.preventDefault()
-  if(e.target.classList.contains('search-btn')){
-     render()
-     
-  }
-  if(e.target.dataset.id){
- arrayWatchlist.push(e.target.dataset.id)
+  let arrayWatchlist =JSON.parse(localStorage.getItem('id'))||[] 
+  document.addEventListener("click",function(e){
+    e.preventDefault()
+    if(e.target.classList.contains('search-btn')){
+      render()
+      
+    }
+    if(e.target.dataset.id){
+      arrayWatchlist.push(e.target.dataset.id)
   console.log(arrayWatchlist)
   localStorage.setItem('id',JSON.stringify(arrayWatchlist))
   console.log(localStorage.getItem('id'))
